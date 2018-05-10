@@ -1,5 +1,7 @@
 @import 'reset';
 @import 'content';
+@import 'hamburger';
+
 @import url("https://use.typekit.net/qbn4jnk.css");
 $breakpoint-mobile: 768px;
 
@@ -21,11 +23,12 @@ html, body {
 	top: 0;
 	left: 80px;
 	width: 100px;
-	z-index: 1;
+	z-index: 102;
 }
 #top, #bottom, #left, #right {
 	background: white;
 	position: fixed;
+	z-index: 100;
 	img{
 		max-width: 20px;
 		max-height: 20px;
@@ -43,13 +46,13 @@ html, body {
 	top: 0; 
 	bottom: 0;
 	width: 50px;
+	z-index: 101;
 
 }
 
 #left { 
 	left: 0; 
 	border-right: 1px solid gray;
-	z-index: 10;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -60,17 +63,6 @@ html, body {
 		align-items: center;
 		
 	}
-	.hamburger {
-		top: 0;
-		position: absolute;
-		margin-top: 10px;
-
-		span {
-			border: 1.5px solid #000;
-			width: 20px;
-			margin: 2px 0;
-		}
-	}
 	.mobile-bag-icon{
 		display: none;
 	}
@@ -79,7 +71,6 @@ html, body {
 #right { 
 	right: 0; 
 	border-left: 1px solid gray;
-	z-index: 10;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;

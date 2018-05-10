@@ -1,0 +1,88 @@
+$width: 20px;
+$bar: 3px;
+
+$color: #000;
+
+$ease-out: cubic-bezier(0.165, 0.85, 0.45, 1);
+$time: 0.4s;
+
+
+
+
+.btn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: $width;
+    height: $width * 0.5;
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: transform $time $ease-out;
+    //reset
+    border: none;
+    &:focus { outline: none; }
+
+    
+    &::before,
+    &::after,
+    &__bar {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: $bar;
+        background-color: $color;
+    }
+    
+    &::before,
+    &::after {
+        content: '';
+        transition: transform $time $ease-out $time;
+    }    
+    &::before {
+        top:0;
+        transform: translateY(0);
+    }
+    &::after {
+        bottom:0;
+        transform: translateY(0);
+    }
+    
+    &__bar {
+        top: calc(50% - #{ $bar * 0.5 });
+        opacity: 0;
+        transform: rotate(0deg);
+        transition: transform $time $ease-out, opacity 0s linear $time;
+    }
+    
+    
+    &:hover { transform: scaleX(1.1); }
+    
+    &.is-active {
+        transform: rotate(45deg);
+        transition-delay: $time;
+
+        &::before,
+        &::after  { transition-delay: 0s; }
+        &::before { transform: translateY(#{ $width * 0.25 - $bar * 0.5 }); }
+        &::after  { transform: translateY(#{ ($width * 0.25 - $bar * 0.5) * -1 }); }
+        
+        .btn__bar { 
+            opacity: 1;
+            transform: rotate(-90deg);
+            transition-delay: $time, $time;
+        }
+    }
+}
+
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
