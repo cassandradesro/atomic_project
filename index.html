@@ -3,37 +3,103 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title> ¯\_(ツ)_/¯ </title>
+		<title>Atomic</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.typekit.net/qbn4jnk.css">
 		<link rel="stylesheet" href="dist/css/main.css">
-
-		<!--
-			Do I work in src or dist?
-			Newbies work in dist, smarty-pants gulp users work in src.
-			Go here to learn more:
-			https://stackoverflow.com/questions/23730882/what-is-the-role-of-src-and-dist-folders
-		-->
-		
 	</head>
 	<body>
-		
-		<div class="content">
-			<img class="logo" src="dist/img/logo.png" alt="Circus Logo">
-			<div class="foreground">
-				<h1>Hello World!</h1>
-				<p>Yep, you've got the Circus Starter project working.</p>
-				<p>Congratulations! You're ready to code.</p>
-				<p class="github">
-					<a target="_blank" href="https://github.com/CreativeCircus/circus-starter">https://github.com/CreativeCircus/circus-starter</a>
-				</p>
-				<code>1.4.4</code>
-			</div>
-			<div class="background"></div>
-		</div>
+			<img class="logo" src="dist/img/logo.png" alt="atomic logo">
 
-		<script src="dist/js/main.js"></script>
+			<div id="left">
+				<section class="hamburger">
+					<span></span>
+					<span></span>
+
+				</section>
+				<section class="nav">
+					<img src="dist/img/hat.png" alt="hat icon">
+					<img src="dist/img/chair.png" alt="chair icon">
+					<img src="dist/img/shirt.png" alt="shirt icon">
+					<img src="dist/img/shorts.png" alt="shorts icon">
+					<img src="dist/img/shoe.png" alt="shoe icon">
+					<img src="dist/img/shirt.png" alt="shirt icon">
+				</section>
+				<section class="mobile-bag-icon">	
+					<img src="dist/img/bag.png" alt="bag icon">
+				</section>
+			</div>
+			<div id="right">
+				<img src="dist/img/bag.png" alt="bag icon">
+			</div>
+			<div id="top">
+
+				<img src="dist/img/search.png" alt="search icon">
+				<p>About</p>
+				<p>Contact</p>
+			</div>
+			<div id="bottom"></div>
+
+			<div class="content-wrapper">
+				<div class="slide slide1">
+					<div class="bg bg-slide1"></div> <!-- background -->
+					<div class="pattern"></div> <!-- pattern -->
+					<div class="letters-wrapper">
+						<p class="letters">Atomic </p> 
+						<p class="flip letters">Atomic </p>
+						<p class="letters">Atomic </p><!-- letters -->
+					</div>
+					<img src="dist/img/girl1.png" alt="girl in jumpsuit">
+					<div class="info info-slide1"> <!-- info -->
+						<img src="dist/img/left-arrow.png" class="left-arrow" alt="left arrow">
+						<div class="blackbox blackbox-slide1">
+							<p>Shop Jumpsuits</p>
+						</div>
+						<div class="whitebox whitebox-slide1">
+							<p>Jumpsuits for Every</p>
+							<span>Occasion</span>
+						</div>
+						<img src="dist/img/right-arrow.png" class="right-arrow" alt="right arrow">
+					</div>
+				</div>
+
+
+				<!-- <div class="slide slide2">
+					<div class="bg bg-slide2"></div>
+					<p>Atomic </br> Atomic </br> Atomic</p>
+					<img src="dist/img/girl2.png" alt="girl in jumpsuit">
+					<div class="info info-slide1">
+						<img src="dist/img/left-arrow.png" class="left-arrow" alt="left arrow">
+						<div class="blackbox blackbox-slide2">
+							<p>Shop All Nineties</p>
+						</div>
+						<div class="whitebox whitebox-slide2">
+							<p>Straight Out of the</p>
+							<span>Nineties</span>
+						</div>
+						<img src="dist/img/right-arrow.png" class="right-arrow" alt="right arrow">
+					</div>
+				</div>
+				<div class="slide slide3">
+					<div class="bg bg-slide3"></div>
+					<p>Atomic </br> Atomic </br> Atomic</p>
+					<img src="dist/img/girl3.png" alt="girl in jumpsuit">
+					<div class="info info-slide1">
+						<img src="dist/img/left-arrow.png" class="left-arrow" alt="left arrow">
+						<div class="blackbox blackbox-slide3">
+							<p>Shop All Eighties</p>
+						</div>
+						<div class="whitebox whitebox-slide3">
+							<p>Step Back Into the</p>
+							<span>Eighties</span>
+						</div>
+						<img src="dist/img/right-arrow.png" class="right-arrow" alt="right arrow">
+					</div>
+				</div> -->
+			</div>
+		<script src="dist/js/app.js"></script>
 
 	</body>
 </html>

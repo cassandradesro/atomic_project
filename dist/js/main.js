@@ -1,4 +1,19 @@
-"use strict";
+'use strict';
 
-console.log("Hello World from app.js! \nChange this message, and make sure it changes in the browser \nto verify that you're working in the right files.");
+var router = new VueRouter({
+	routes: [{ path: '/home', component: HomeComponent }, { path: '/shop', component: ShopComponent }, { path: '/buy', component: BuyComponent }]
+});
+
+var app = new Vue({
+	el: "#app",
+	router: router,
+	data: {
+		username: localStorage.getItem("username"),
+		seconds: 20,
+		status: [],
+		localtimeleft: 0
+	},
+	created: function created() {},
+	methods: {}
+});
 //# sourceMappingURL=main.js.map

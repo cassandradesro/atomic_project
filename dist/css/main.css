@@ -1,22 +1,8 @@
-/* 
-==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
-==============================================
-
-TABLE OF CONTENTS:
-
-0. Reset
-1. Main Layout
-2. Content
-
-==============================================
-*/
-/* 0. Reset ================================= */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://use.typekit.net/qbn4jnk.css");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,91 +53,162 @@ table {
 	border-spacing: 0;
 }
 
+.content-wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 35px 50px 35px 50px;
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.bg-slide1 {
+	background-color: yellow;
+}
+
+.letters-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.letters-wrapper .letters {
+	font-family: "brandon-grotesque",sans-serif;
+	font-size: 18rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #e96f63;
+}
+
+.letters-wrapper .flip {
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+.slide1 img {
+	width: 50%;
+	z-index: 3;
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
 }
 
-body {
-	background: #ccc;
-}
-
-/* 2. Content ================================= */
-.content {
-	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
-}
-
-.content .foreground {
-	position: relative;
-	z-index: 2;
-	transform: translateZ(100px);
-}
-
-.content .background {
-	position: absolute;
+html, body {
+	background-color: #ccc;
 	width: 100%;
 	height: 100%;
-	left: 0;
+	font-family: "brandon-grotesque",sans-serif;
+}
+
+.logo {
+	position: fixed;
 	top: 0;
-	background: white;
+	left: 80px;
+	width: 100px;
 	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
 }
 
-.content:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
+#top, #bottom, #left, #right {
+	background: white;
+	position: fixed;
 }
 
-.content .logo {
+#top img, #bottom img, #left img, #right img {
+	max-width: 20px;
+	max-height: 20px;
+	margin-bottom: 20px;
+}
+
+#left, #right {
+	top: 0;
+	bottom: 0;
+	width: 50px;
+}
+
+#left {
+	left: 0;
+	border-right: 1px solid gray;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#left section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#left .hamburger {
+	top: 0;
 	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transform: translateZ(100px);
-	transition: 0.3s;
+	margin-top: 10px;
 }
 
-.content .logo:hover {
-	transform: rotate(-0.4turn);
+#left .hamburger span {
+	border: 1.5px solid #000;
+	width: 20px;
+	margin: 2px 0;
 }
 
-.content h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+#left .mobile-bag-icon {
+	display: none;
 }
 
-.content p {
-	color: #777;
-	line-height: 140%;
+#right {
+	right: 0;
+	border-left: 1px solid gray;
+	z-index: 10;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
 }
 
-.content p.github {
-	font-size: 0.8em;
+#right img {
+	width: 14px;
+	margin-top: 10px;
 }
 
-.content p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
+#top, #bottom {
+	left: 0;
+	right: 0;
+	height: 35px;
 }
 
-.content p.github a:hover {
-	opacity: 1;
-	color: red;
+#top {
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 80px;
 }
 
-.content code {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+#top img, #top p {
+	margin-right: 20px;
+}
+
+#top p {
+	text-transform: uppercase;
+	font-size: .75rem;
+}
+
+#top img {
+	width: 14px;
+	margin-top: 18px;
+}
+
+#bottom {
+	bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
