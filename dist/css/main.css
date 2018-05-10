@@ -56,33 +56,55 @@ table {
 .content-wrapper {
 	width: 100%;
 	height: 100%;
-	margin: 35px 50px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.slide {
+	width: 100vw;
+	height: 100vh;
 }
 
 .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 1;
 }
 
-.bg-slide1 {
-	background-color: yellow;
+.pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: .5;
 }
 
 .letters-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index: 3;
+	overflow: hidden;
 }
 
 .letters-wrapper .letters {
-	font-family: "brandon-grotesque",sans-serif;
-	font-size: 18rem;
+	font-family: Helvetica, sans-serif;
+	font-size: 33vh;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #e96f63;
 }
 
 .letters-wrapper .flip {
+	display: flex;
+	justify-content: flex-end;
 	-webkit-transform: rotate(-180deg);
 	-moz-transform: rotate(-180deg);
 	-o-transform: rotate(-180deg);
@@ -90,9 +112,41 @@ table {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
-.slide1 img {
-	width: 50%;
-	z-index: 3;
+.slide1.active .bg-slide1 {
+	background-color: #faf09a;
+}
+
+.slide1.active .person {
+	position: absolute;
+	bottom: 0;
+	right: 100px;
+	width: 20%;
+	z-index: 4;
+}
+
+.slide2.active .bg-slide2 {
+	background-color: green;
+}
+
+.slide3.active .bg-slide3 {
+	background-color: blue;
+}
+
+.info {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 5;
+}
+
+.blackbox {
+	background-color: #000;
+	color: #fff;
+}
+
+.whitebox {
+	background-color: #fff;
+	color: #000;
 }
 
 .btn {
