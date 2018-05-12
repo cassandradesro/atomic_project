@@ -75,6 +75,9 @@ table {
 }
 
 .pattern {
+	background-image: url(../img/bg-tileable.png);
+	background-repeat: repeat-x;
+	background-size: contain;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -112,20 +115,45 @@ table {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
+.slide1 {
+	opacity: 0;
+}
+
+.slide1.active {
+	opacity: 1;
+}
+
 .slide1.active .bg-slide1 {
 	background-color: #faf09a;
 }
 
 .slide1.active .person {
 	position: absolute;
+	right: 50%;
 	bottom: 0;
-	right: 100px;
-	width: 20%;
+	transform: translate(-50% -50%);
+	max-width: 28%;
 	z-index: 4;
+}
+
+.slide2 {
+	opacity: 0;
+}
+
+.slide2.active {
+	opacity: 1;
 }
 
 .slide2.active .bg-slide2 {
 	background-color: green;
+}
+
+.slide3 {
+	opacity: 0;
+}
+
+.slide3.active {
+	opacity: 1;
 }
 
 .slide3.active .bg-slide3 {
@@ -134,22 +162,54 @@ table {
 
 .info {
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 5;
+	bottom: 15%;
+	right: 20%;
+	z-index: 4;
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: space-between;
+}
+
+.info img {
+	width: 32px;
+	height: 32px;
+	margin: 80px 60px;
 }
 
 .blackbox {
 	background-color: #000;
 	color: #fff;
+	width: 70%;
+	text-align: center;
+	transform: rotate(-20deg);
+	margin-left: -18%;
+	margin-bottom: -5%;
+	padding: 8px 0;
+	text-transform: uppercase;
 }
 
 .whitebox {
 	background-color: #fff;
 	color: #000;
+	text-transform: uppercase;
+	padding: 30px;
+	font-weight: bold;
+	max-width: 400px;
+	white-space: nowrap;
+}
+
+.whitebox p {
+	font-size: 1.5rem;
+}
+
+.whitebox span {
+	font-size: 2.5rem;
 }
 
 .btn {
+	z-index: 999999;
 	position: absolute;
 	top: 10px;
 	left: 15px;
@@ -223,6 +283,33 @@ table {
 	transition-delay: 0.4s, 0.4s;
 }
 
+.menu-list {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #fff;
+	z-index: 10;
+	border-right: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	color: #000;
+	align-items: flex-start;
+	justify-content: center;
+	padding-left: 100px;
+}
+
+.menu-list li {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-size: .9rem;
+}
+
 .sr-only {
 	width: 1px;
 	height: 1px;
@@ -232,6 +319,38 @@ table {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
+}
+
+.menu {
+	display: none;
+}
+
+.menu-active {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #fff;
+	z-index: 10;
+	border-right: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	color: #000;
+	align-items: flex-start;
+	justify-content: center;
+	padding-left: 100px;
+}
+
+.menu-active p {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-size: .9rem;
 }
 
 /* 1. Main Layout ================================= */
@@ -290,6 +409,10 @@ html, body {
 
 #left .mobile-bag-icon {
 	display: none;
+}
+
+#left img {
+	z-index: 99999;
 }
 
 #right {

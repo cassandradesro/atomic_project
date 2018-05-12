@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'content';
 @import 'hamburger';
+@import 'hidden-content';
 
 @import url("https://use.typekit.net/qbn4jnk.css");
 $breakpoint-mobile: 768px;
@@ -65,6 +66,13 @@ html, body {
 	}
 	.mobile-bag-icon{
 		display: none;
+	}
+	img{
+		z-index: 99999;
+	}
+
+	a{
+		
 	}
 }
 

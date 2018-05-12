@@ -19,6 +19,9 @@
 	z-index: 1;
 }
 .pattern{
+	background-image: url(../img/bg-tileable.png);
+	background-repeat: repeat-x;
+	background-size: contain;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -59,15 +62,18 @@
 
 
 .slide1{
+	opacity: 0;
 	&.active{
+		opacity: 1;
 		.bg-slide1{
 			background-color: #faf09a;
 		}
 		.person{
 			position: absolute;
+			right: 50%;
 			bottom: 0;
-			right: 100px;
-			width: 20%;
+			transform: translate(-50% -50%);
+			max-width: 28%;
 			z-index: 4;
 		}
 	}
@@ -77,14 +83,18 @@
 
 
 .slide2{
+	opacity: 0;
 	&.active{
+		opacity: 1;
 		.bg-slide2{
 			background-color: green;
 		}
 	}
 }
 .slide3{
+	opacity: 0;
 	&.active{
+		opacity: 1;
 		.bg-slide3{
 			background-color: blue;
 		}
@@ -93,19 +103,50 @@
 
 .info{
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 5;
+	bottom: 15%;
+	right: 20%;
+	z-index: 4;
+	width: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: space-between;
+	img{
+		width: 32px;
+		height: 32px;
+		margin: 80px 60px;
+	}
+
 }
 
 .blackbox{
 	background-color: #000;
 	color: #fff;
+	width: 70%;
+	text-align: center;
+	transform: rotate(-20deg);
+	margin-left: -18%;
+	margin-bottom: -5%;
+	padding: 8px 0;
+	text-transform: uppercase;
 }
 
 .whitebox{
 	background-color: #fff;
 	color: #000;
+	text-transform: uppercase;
+	padding: 30px;
+	font-weight: bold;
+	max-width: 400px;
+	white-space: nowrap;
+
+	p{
+		font-size: 1.5rem;
+	}
+
+	span{
+		font-size: 2.5rem;
+	}
 }
 
 
