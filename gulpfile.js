@@ -13,22 +13,23 @@ const gulp = require('gulp'),
 	colors = require('colors'),
 	plumber = require('gulp-plumber'),
 	gulpFn  = require('gulp-fn'),
+	axios = require('axios'),
+	fs = require('fs'),
+	util = require('util'),
 	browserSync = require('browser-sync').create()
 
 
-const genericErrorHandler = function (err) {
-	fancyLog("SCSS Issue: " + err.toString().red);
-	// console.log(err.toString());
-	this.emit('end');
-}
 
 gulp.task('html-refresh', function() {
-	gulp.watch(['src/js/**/*.js', 'dist/js/**/*.js', '*.html']).on("change", browserSync.reload);
+	return watch(['src/js/**/*.js', 'dist/js/**/*.js', '*.html', '!node_modules/*.*'], { ignoreInitial: false })
+		.pipe(gulpFn(function(file) {
+			browserSync.reload();
+		}))
 });
 	
 
 gulp.task('html-check', function() {
-	return watch('*.html', { ignoreInitial: false })
+	return watch(['*.html', '!node_modules/*.*'], { ignoreInitial: false })
 		.pipe(plumber())
 		.pipe(htmllint({}, htmllintReporter))
 });
@@ -51,7 +52,7 @@ var htmllintReporter = function (filepath, issues) {
 
 
 // this task takes sass files and compiles them
-gulp.task('sass-compile', function () {
+gulp.task('sass-compile', () => {
 	return watch('src/scss/**/*.scss') // run over these files
 		.pipe(plumber())
 		.pipe(sourcemaps.init()) // make sourcemaps for chrome devtools
@@ -72,30 +73,15 @@ gulp.task('sass-compile', function () {
 });
 
 
-// this task looks through js files for errors
-gulp.task('js-check', function () {
-	// if eslint complains about a certain error, and you want to turn it off, or change it
-	// go here for the rules https://eslint.org/docs/rules/
-	// and you'll need to change them in the .eslintrc file in the root of the project.
-	return watch(['src/js/**/*.js', 'dist/js/**/*.js'], function() {
-		return gulp.src(['src/js/**/*.js', 'dist/js/**/*.js'])
-			.pipe(plumber())
-			.pipe(eslint())
-			.pipe(eslint.format())
-			.pipe(eslint.failAfterError())	
-	})
-})
 
 
 
 // this task looks through js files for errors
-gulp.task('js-compile', function () {
+gulp.task('js-compile', () => {
 	return watch('src/js/**/*.js') // watch these files
 		.pipe(plumber())
 		.pipe(sourcemaps.init()) // make sourcemaps for chrome devtools
-		.pipe(babel({ // run the js through babel to convert ES6 to ES5
-			presets: ['env'],
-		}))
+		.pipe(babel())
 		.on('error', function (err) {
 			console.warn('[JS Babel Error] '.red + err.message);
 		})
@@ -112,35 +98,18 @@ gulp.task('js-compile', function () {
 });
 
 // this task looks through js files for errors
-gulp.task('image-compress', function () {
+gulp.task('image-compress', () => {
 	let imgDest = 'dist/img/';
-	return watch('src/img/*.*') // watch these files
+	return watch('src/img/**/*.*') // watch these files
 		.pipe(plumber())
-		.pipe(changed(imgDest))
+		.pipe(changed((file) => file.base.replace('src', 'dist')))
 		.pipe(imagemin())
-		.pipe(gulp.dest(imgDest)) // put the image files here.
+		.pipe(gulp.dest((file) => file.base.replace('src', 'dist'))) // put the image files here.
 		.pipe(browserSync.stream()) // tell browsersync to send over the changes
 		.pipe(gulpFn(function(file) {
 			console.log("Image compressed and copied to: ".cyan);
-			console.log(file.history[1])
+			console.log(file.path.replace('src', 'dist'));
 		}))
-})
-
-gulp.task('welcome', function () {
-	console.log(colors.red('Starting Circus Starter template gulpfile! Wizz, whirrrrr, bang, pop!'));
-})
-
-gulp.task('make-cool-shit', function () {
-	setTimeout(() => {
-		console.log(' ');
-		console.log(' ================================================ '.red);
-		console.log('  Welcome to the Circus Starter template.         '.white.bold);
-		console.log('  You\'re good to go.                              '.white.bold);
-		console.log('  Make cool 💩.                                     '.white.bold);
-		console.log('                                - Chris Silich    '.white.dim);
-		console.log(' ================================================ '.red);
-		console.log(' ');
-	}, 500)
 })
 
 
@@ -152,6 +121,53 @@ gulp.task('start-browsersync', function() {
 })
 
 
+
+gulp.task('welcome', () => {
+	console.log(colors.red('Starting Circus Starter template gulpfile! Wizz, whirrrrr, bang, pop!'));
+})
+
+gulp.task('make-cool-shit', () => {
+	setTimeout(() => {
+		console.log(' ');
+		console.log(' ================================================ '.red);
+		console.log('  Welcome to the Circus Starter template.         '.blue.bold);
+		console.log('  You\'re good to go.                              '.blue.bold);
+		console.log('  Make cool 💩.                                     '.blue.bold);
+		console.log('                                - Chris Silich    '.blue.dim);
+		console.log(' ================================================ '.red);
+		console.log(' ');
+	}, 500)
+})
+
+
+
+
+gulp.task('version', () => {
+	// pay no attention to the man behind the curtain.
+	fs.readFile('package.json', 'utf8', function (err, data) {
+		if (err) {
+			console.warn(`Where's package.json?!?!?!`.red.bold.inverse);
+			return false;
+		}
+		let parsedPackage = JSON.parse(data);	
+		let packagefileURL = 'https://raw.githubusercontent.com/CreativeCircus/circus-starter/master/package.json';
+		axios.get(packagefileURL, {responseType: 'json'})
+			.then(response => {
+				if (parsedPackage.version === response.data.version) {
+					console.log(`Circus Starter template appears to be up to date.`)
+				} else {
+					console.warn(`Local version is ${parsedPackage.version}.`.red.bold)	
+					console.warn(`Remote version is ${response.data.version}.`.red.bold)	
+					console.warn(`Circus Starter template appears to be out of date.`.red.bold.inverse)				
+					console.warn(`If this is a new project, get a new copy. If it's an old project, consider updating for new gulpy goodness.`.red.bold.inverse)				
+				}
+			})
+			.catch(error => {
+				console.log(`Couldn't fetch circus-starter mod date`, error);
+			});
+	});
+})
+
 // running `gulp` runs this task. this task sort of branches off into the others as needed
 gulp.task('default', [
 	'welcome', 
@@ -159,10 +175,10 @@ gulp.task('default', [
 	'html-refresh', 
 	'html-check', 
 	'image-compress', 
-	'js-check', 
 	'js-compile', 
 	'sass-compile', 
-	'make-cool-shit'
+	'make-cool-shit',
+	'version'
 ]);
 
 gulp.task('no-browser-sync', [
@@ -170,8 +186,10 @@ gulp.task('no-browser-sync', [
 	'html-refresh', 
 	'html-check', 
 	'image-compress', 
-	'js-check', 
 	'js-compile', 
 	'sass-compile', 
-	'make-cool-shit'
+	'make-cool-shit',
+	'version'
 ]);
+
+
