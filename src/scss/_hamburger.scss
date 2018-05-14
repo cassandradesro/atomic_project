@@ -9,6 +9,7 @@ $time: 0.4s;
 
 .btn {
     position: absolute;
+    z-index: 9999999;
     top: 10px;
     left: 15px;
     width: $width;
@@ -16,6 +17,7 @@ $time: 0.4s;
     transform: rotate(0deg);
     transform-origin: center;
     transition: transform $time $ease-out;
+    cursor: pointer;
     //reset
     border: none;
     &:focus { outline: none; }
@@ -86,9 +88,12 @@ $time: 0.4s;
 }
 
 .menu-list{
-    display: none;
-    
+    visibility: hidden ;
+    transition: $time, $ease-out;
+
     &.is-active{
+        transition: $time $ease-out;
+        visibility: visible;
         position: absolute;
         top:0;
         left:0;
@@ -113,7 +118,11 @@ $time: 0.4s;
             text-transform: uppercase;
             margin-bottom: 20px;
             font-size: .9rem;
-        
+            
+            a{
+                text-decoration: none;
+                cursor: pointer;
+            }
         }
     } 
 }

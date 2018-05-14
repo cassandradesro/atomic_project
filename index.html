@@ -14,7 +14,10 @@
 			<img class="logo" src="dist/img/logo.png" alt="atomic logo">
 
 			<div id="left">
-				
+				<button class="btn js-btn">
+					<span class="btn__bar"></span>
+					<em class="sr-only">menu</em>
+				</button>
 
 				<section class="icon-menu">
 					<img src="dist/img/hat.png" alt="hat icon">
@@ -24,13 +27,13 @@
 					<img src="dist/img/shoe.png" alt="shoe icon">
 					
 				</section>
-				<ul class="menu-list">
-					<li>Hat</li>
-					<li>Chair</li>
-					<li>Shirt</li>
-					<li>Short</li>
-					<li>Shoe</li>
-				</ul>
+				<div class="menu-list">
+					<li><a href="">Hat</a></li>
+					<li><a href="">Chair</a></li>
+					<li><a href="">Shirt</a></li>
+					<li><a href="">Short</a></li>
+					<li><a href="">Shoe</a></li>
+				</div>
 				<section class="mobile-bag-icon">	
 					<img src="dist/img/bag.png" alt="bag icon">
 				</section>
@@ -47,7 +50,7 @@
 			<div id="bottom"></div>
 
 			<div class="content-wrapper">
-				<div class="slide slide1 active">
+				<div class="slide slide1">
 					<div class="bg bg-slide1"></div> <!-- background -->
 					<div class="pattern" alt="geometric swirly pattern in background"></div> <!-- pattern -->
 					<div class="letters-wrapper">
@@ -73,11 +76,19 @@
 				</div>
 
 
-				<!-- <div class="slide slide2">
-					<div class="bg bg-slide2"></div>
-					<p>Atomic </br> Atomic </br> Atomic</p>
-					<img src="dist/img/girl2.png" alt="girl in jumpsuit">
-					<div class="info info-slide1">
+				<div class="slide slide2 active">
+					<div class="bg bg-slide2"></div><!--background-->
+					<div class="pattern" alt="geometric swirly pattern in background"></div> <!-- pattern -->
+
+					<div class="letters-wrapper">
+						<p class="letters">AtomicAtomicAtomicAtomic</p> 
+						<p class="flip letters">AtomicAtomicAtomicAtomic </p>
+						<p class="letters">AtomicAtomicAtomic </p><!-- letters -->
+					</div>
+					<img class="person" src="dist/img/guys.png" alt="girl in jumpsuit">
+					
+
+					<div class="info info-slide2">
 						<img src="dist/img/left-arrow.png" class="left-arrow" alt="left arrow">
 						<div class="blackbox blackbox-slide2">
 							<p>Shop All Nineties</p>
@@ -88,8 +99,10 @@
 						</div>
 						<img src="dist/img/right-arrow.png" class="right-arrow" alt="right arrow">
 					</div>
+				
+
 				</div>
-				<div class="slide slide3">
+				<!-- <div class="slide slide3">
 					<div class="bg bg-slide3"></div>
 					<p>Atomic </br> Atomic </br> Atomic</p>
 					<img src="dist/img/girl3.png" alt="girl in jumpsuit">

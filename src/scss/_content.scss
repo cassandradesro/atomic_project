@@ -87,8 +87,19 @@
 	&.active{
 		opacity: 1;
 		.bg-slide2{
-			background-color: green;
+			background-color: #49efa3;
 		}
+		.pattern{
+			filter:sepia(100%);
+		}
+		.person{
+			position: absolute;
+			right: 50%;
+			bottom: -60px;
+			max-width: 40%;
+			z-index: 4;
+		}
+
 	}
 }
 .slide3{
