@@ -4,9 +4,10 @@ var btn = document.querySelector('.js-btn');
 var menu = document.querySelector('.menu-list');
 var slide2 = document.querySelector('.slide2');
 var slide1 = document.querySelector('.slide1');
+var leftside = document.querySelector('#left');
 
 function init() {
-				btn.addEventListener('click', function () {
+				leftside.addEventListener('click', function () {
 								btn.classList.toggle('is-active');
 								menu.classList.toggle('is-active');
 				});
