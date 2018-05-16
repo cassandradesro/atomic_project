@@ -10,8 +10,8 @@ var girl2 = document.querySelector('.girl2');
 var girl3 = document.querySelector('.girl3');
 var girl4 = document.querySelector('.girl4');
 var productDescription = document.querySelector('.product-description');
-var productTitle = document.querySelector('.product-title');
-var productPrice = document.querySelector('.product-price');
+var productTitle = document.querySelector('.title-wrapper .product-title');
+var productPrice = document.querySelector('.title-wrapper .product-price');
 var productImage = document.querySelector('.product-image');
 var selection = document.querySelector('.selection-container');
 var boxes = document.querySelector('.box-wrapper');
@@ -47,8 +47,7 @@ var arrow = document.querySelectorAll('.arrow'),
 }
 
 girl1.addEventListener('click', function(){
-	console.log("girl3 clicked");
-	TweenMax.staggerFrom(".product-image", 2, {top:-2000, ease:Back.easeOut}, 0.1);
+	console.log("girl1 clicked");
 	selection.classList.add('active');
 	boxes.classList.remove('active');
 	productTitle.innerHTML = "1960s Shift Dress";
@@ -59,7 +58,6 @@ girl1.addEventListener('click', function(){
 
 girl2.addEventListener('click', function(){
 	console.log("girl2 clicked");
-	TweenMax.staggerFrom(".product-image", 2, {top:-2000, ease:Back.easeOut}, 0.1);
 	selection.classList.add('active');
 	boxes.classList.remove('active');
 	
@@ -70,8 +68,7 @@ girl2.addEventListener('click', function(){
 });
 
 girl3.addEventListener('click', function(){
-	console.log("girl1 clicked");
-	TweenMax.staggerFrom(".product-image", 2, {top:-2000, ease:Back.easeOut}, 0.1);
+	console.log("girl3 clicked");
 	selection.classList.add('active');
 	boxes.classList.remove('active');
 	productTitle.innerHTML = "1970s Patterned Dress";
@@ -82,7 +79,6 @@ girl3.addEventListener('click', function(){
 
 girl4.addEventListener('click', function(){
 	console.log("girl4 clicked");
-	TweenMax.staggerFrom(".product-image", 2, {top:-2000, ease:Back.easeOut}, 0.1);
 	selection.classList.add('active');
 	boxes.classList.remove('active');
 	productTitle.innerHTML = "Disco Sequin Gown";

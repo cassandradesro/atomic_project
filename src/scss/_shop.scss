@@ -31,19 +31,20 @@
 				flex-direction: row;
 				margin: 20px 10px 0 10px;
 				width: 300px;
-				.text{
-					display: flex;
-					width: 300px;
-					height: 30px;
-					font-size: 1rem;
-					text-transform: uppercase;
-				}
-				span{
-					font-weight: bold;
-					// margin-left: 80px;
-					justify-content: space-between;
-				}
+				
 			}	
+			.text{
+				display: flex;
+				width: 300px;
+				height: 30px;
+				font-size: 1rem;
+				text-transform: uppercase;
+			}
+			span{
+				font-weight: bold;
+				// margin-left: 80px;
+				justify-content: space-between;
+			}
 		}
 	}
 }
