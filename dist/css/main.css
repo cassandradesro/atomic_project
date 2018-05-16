@@ -699,6 +699,70 @@ table {
 	border: none;
 }
 
+.checkout {
+	visibility: hidden;
+	transition: 0.4s, cubic-bezier(0.165, 0.85, 0.45, 1);
+}
+
+.checkout.is-active {
+	transition: 0.4s cubic-bezier(0.165, 0.85, 0.45, 1);
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 350px;
+	height: 100%;
+	background-color: #fff;
+	z-index: 10;
+	border-left: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	color: #000;
+	align-items: flex-start;
+	justify-content: center;
+	padding-right: 100%;
+}
+
+.checkout.is-active .line {
+	border-top: 1px solid #ccc;
+	margin: 20px;
+	width: 100%;
+}
+
+.checkout.is-active .checkout-choice, .checkout.is-active .checkout-price {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 20px;
+	width: 100%;
+}
+
+.checkout.is-active .checkout-swatch {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	margin-right: 20px;
+}
+
+.checkout.is-active .product-title {
+	margin-right: 20px;
+}
+
+.checkout.is-active button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 20px 20px 20px;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	padding: 10px 0;
+	font-size: .8rem;
+	text-transform: lowercase;
+	font-weight: bold;
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
@@ -765,13 +829,15 @@ html, body {
 	right: 0;
 	border-left: 1px solid gray;
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 #right img {
 	width: 14px;
 	margin-top: 10px;
+	z-index: 999999;
 }
 
 #top, #bottom {
