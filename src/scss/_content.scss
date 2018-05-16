@@ -3,6 +3,8 @@
 	height: 100%;	
 	overflow-x: hidden;
 	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .slide{
@@ -29,6 +31,8 @@
 	height: 100%;
 	z-index: 2;
 	opacity: .5;
+	animation: blink 1s infinite linear;
+
 }
 
 .letters-wrapper{
@@ -224,6 +228,10 @@
 	font-weight: bold;
 	max-width: 400px;
 	white-space: nowrap;
+	-webkit-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
+	box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
+	text-decoration: none;
 	/* top: 0; */
 
 	p{
@@ -233,6 +241,8 @@
 	span{
 		font-size: 2.5rem;
 	}
+
+
 }
 
 @keyframes animate{
@@ -273,7 +283,40 @@
 		text-shadow: none;
 	}
 }
+@keyframes blink{
+	0%{
+		filter:sepia(100%);
 
+	}
+	18%{
+		filter:sepia(100%);
 
+	}
+	20%{
+		filter:sepia(50%);
+
+	}
+	30%{
+		filter:sepia(100%);
+
+	}
+	35%{
+		filter:sepia(0%);
+	}
+	70%{
+		filter:sepia(100%);
+
+	}
+	85%{
+		filter:sepia(50%);
+	}
+	90%{
+		filter:sepia(100%);
+
+	}
+	100%{
+		filter:sepia(100%);
+	}
+}
 
 

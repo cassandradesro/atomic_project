@@ -1,7 +1,7 @@
 @import 'reset';
 @import 'content';
 @import 'hamburger';
-@import 'hidden-content';
+@import 'shop';
 
 @import url("https://use.typekit.net/qbn4jnk.css");
 $breakpoint-mobile: 768px;
@@ -13,7 +13,7 @@ $breakpoint-mobile: 768px;
 }
 
 html, body {
-	background-color: #ccc;
+	background-color: #f7f7f7;
 	width: 100%;
 	height: 100%;
 	font-family: "brandon-grotesque",sans-serif;

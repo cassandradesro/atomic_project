@@ -58,6 +58,8 @@ table {
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .slide {
@@ -85,6 +87,7 @@ table {
 	height: 100%;
 	z-index: 2;
 	opacity: .5;
+	animation: blink 1s infinite linear;
 }
 
 .letters-wrapper {
@@ -327,6 +330,10 @@ table {
 	font-weight: bold;
 	max-width: 400px;
 	white-space: nowrap;
+	-webkit-box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75);
+	text-decoration: none;
 	/* top: 0; */
 }
 
@@ -374,6 +381,36 @@ table {
 	100% {
 		color: #e96f63;
 		text-shadow: none;
+	}
+}
+
+@keyframes blink {
+	0% {
+		filter: sepia(100%);
+	}
+	18% {
+		filter: sepia(100%);
+	}
+	20% {
+		filter: sepia(50%);
+	}
+	30% {
+		filter: sepia(100%);
+	}
+	35% {
+		filter: sepia(0%);
+	}
+	70% {
+		filter: sepia(100%);
+	}
+	85% {
+		filter: sepia(50%);
+	}
+	90% {
+		filter: sepia(100%);
+	}
+	100% {
+		filter: sepia(100%);
 	}
 }
 
@@ -504,13 +541,171 @@ table {
 	color: #000;
 }
 
+.box-wrapper {
+	display: none;
+}
+
+.box-wrapper.active {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.box-wrapper.active .box-container {
+	position: relative;
+}
+
+.box-wrapper.active .box-container .box {
+	display: flex;
+	background-color: #ccc;
+	width: 300px;
+	height: 700px;
+	margin: 60px 10px 0 10px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom: 2px solid red;
+}
+
+.box-wrapper.active .box-container .text-wrapper {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 10px 0 10px;
+	width: 300px;
+}
+
+.box-wrapper.active .box-container .text-wrapper .text {
+	display: flex;
+	width: 300px;
+	height: 30px;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.box-wrapper.active .box-container .text-wrapper span {
+	font-weight: bold;
+	justify-content: space-between;
+}
+
+.box1 {
+	background-image: url(../img/shop-image2.png);
+}
+
+.box2 {
+	background-image: url(../img/shop-image1.png);
+}
+
+.box3 {
+	background-image: url(../img/shop-image3.png);
+}
+
+.box4 {
+	background-image: url(../img/shop-image4.png);
+}
+
+.selection-container {
+	display: none;
+}
+
+.selection-container.active {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 60px;
+}
+
+.selection-container.active .col-half {
+	display: flex;
+	width: 50%;
+}
+
+.selection-container.active .product-images {
+	flex-direction: row;
+	padding-left: 10%;
+}
+
+.selection-container.active .product-images .product-image {
+	max-width: 50%;
+	margin-right: 40px;
+}
+
+.selection-container.active .product-images .swatches {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.selection-container.active .product-images .swatches .swatch {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.selection-container.active .product-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 25%;
+}
+
+.selection-container.active .product-details .title-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.selection-container.active .product-details .title-wrapper .product-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.selection-container.active .product-details .title-wrapper .product-price {
+	font-size: 1rem;
+}
+
+.selection-container.active .product-details .product-description {
+	margin-bottom: 20px;
+}
+
+.selection-container.active .product-details .details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.selection-container.active .product-details .details h2 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.selection-container.active .product-details .button-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.selection-container.active .product-details .button-wrapper button {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+	font-family: "brandon-grotesque",sans-serif;
+	font-size: 1rem;
+	border: none;
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
 }
 
 html, body {
-	background-color: #ccc;
+	background-color: #f7f7f7;
 	width: 100%;
 	height: 100%;
 	font-family: "brandon-grotesque",sans-serif;

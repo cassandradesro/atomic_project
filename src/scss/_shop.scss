@@ -1,0 +1,181 @@
+
+
+
+.box-wrapper{
+	display: none;
+	&.active{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		position: relative;
+
+		.box-container{
+			position: relative;
+		
+			.box{
+				display: flex;
+				background-color: #ccc;
+				width: 300px;
+				height: 700px;
+				margin: 60px 10px 0 10px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				border-bottom: 2px solid red;
+			}
+
+			.text-wrapper{
+				display: flex;
+				flex-direction: row;
+				margin: 20px 10px 0 10px;
+				width: 300px;
+				.text{
+					display: flex;
+					width: 300px;
+					height: 30px;
+					font-size: 1rem;
+					text-transform: uppercase;
+				}
+				span{
+					font-weight: bold;
+					// margin-left: 80px;
+					justify-content: space-between;
+				}
+			}	
+		}
+	}
+}
+
+.box1{
+	background-image: url(../img/shop-image2.png);
+}
+.box2{
+	background-image: url(../img/shop-image1.png);
+}
+.box3{
+	background-image: url(../img/shop-image3.png);
+}
+.box4{
+	background-image: url(../img/shop-image4.png);
+}
+
+.selection-container{
+	display: none;
+
+	&.active{
+		display: flex;
+		flex-direction: row;
+		width:100%;
+		margin: 60px;
+
+		.col-half{
+			display: flex;
+			width: 50%;
+		}
+
+		.product-images{
+			flex-direction: row;
+			padding-left: 10%;
+			.product-image{
+				max-width: 50%;
+				margin-right: 40px;
+			}
+
+			.swatches{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+
+				.swatch{
+					background-color: red;
+					width: 100px;
+					height: 100px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		.product-details{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-right: 25%;
+
+			.title-wrapper{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-bottom: 20px;
+
+				.product-title{
+					font-size: 1.5rem;
+					font-weight: bold;
+				}
+				.product-price{
+					font-size: 1rem;
+				}
+
+			}
+			.product-description{
+				margin-bottom: 20px;
+			}
+			.details{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-bottom: 20px;
+
+				h2{
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+			.button-wrapper{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+
+				button{
+					background-color: #000;
+					color: #fff;
+					padding: 10px;
+					font-family: "brandon-grotesque",sans-serif;
+					font-size: 1rem;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

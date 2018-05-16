@@ -1,26 +1,6 @@
-$('.ml12').each(function(){
-  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-});
+TweenMax.staggerFrom(".box-container", 3, {top:-2000, opacity:0, delay:1, ease:Back.easeOut}, 0.1);
+TweenMax.staggerFrom(".person", 1, {left:-2000, ease:Back.easeOut}, 0.1);
+TweenMax.staggerFrom(".letters-wrapper", 1.2, {left:-2000, ease:Back.easeOut}, 0.1);
+TweenMax.staggerFrom(".pattern", .6, {left:-2000, ease:Back.easeOut}, 0.1);
+TweenMax.staggerFrom(".bg", 1.5, {left:-2000, ease:Back.easeOut}, 0.1);
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml12 .letter',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: function(el, i) {
-      return 500 + 30 * i;
-    }
-  }).add({
-    targets: '.ml12 .letter',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: function(el, i) {
-      return 100 + 30 * i;
-    }
-  });
-}
