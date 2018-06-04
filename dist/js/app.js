@@ -17,9 +17,14 @@ var productPrice = document.querySelector('.title-wrapper .product-price');
 var productImage = document.querySelector('.product-image');
 var selection = document.querySelector('.selection-container');
 var boxes = document.querySelector('.box-wrapper');
+var bagIcon = document.querySelector('.bag-icon');
 
 function init() {
 	leftside.addEventListener('click', function () {
+		btn.classList.toggle('is-active');
+		menu.classList.toggle('is-active');
+	});
+	btn.addEventListener('click', function () {
 		btn.classList.toggle('is-active');
 		menu.classList.toggle('is-active');
 	});
@@ -27,6 +32,14 @@ function init() {
 		console.log("you hit the right side");
 		checkout.classList.toggle('is-active');
 	});
+	bagIcon.addEventListener('click', function () {
+		console.log("you hit the right side");
+		checkout.classList.toggle('is-active');
+	});
+	// mobileMenuButton.addEventListener('click', function () {
+	// 	console.log("you hit the mobile menu");
+	//     mobileMenu.classList.toggle('is-active');
+	// });
 }
 
 document.addEventListener('DOMContentLoaded', init);

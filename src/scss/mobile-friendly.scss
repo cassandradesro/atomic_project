@@ -1,0 +1,170 @@
+@import 'reset';
+@import 'content';
+@import 'hamburger';
+@import 'shop';
+@import 'checkout';
+
+@import url("https://use.typekit.net/qbn4jnk.css");
+$breakpoint-mobile: 768px;
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	background-color: #f7f7f7;
+	width: 100%;
+	height: 100%;
+	font-family: "brandon-grotesque",sans-serif;
+}
+
+
+#top, #bottom, #left, #right {
+	background: white;
+	position: fixed;
+	z-index: 100;
+	
+}
+
+#left, #right {
+	top: 0; 
+	bottom: 0;
+	width: 50px;
+	z-index: 101;
+	@media (max-width: $breakpoint-mobile) {
+		visibility: hidden;
+	}
+
+}
+
+#left { 
+	left: 0; 
+	border-right: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.icon-menu{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 99999;
+		img{
+			margin-bottom: 20px;
+		max-width: 20px;
+		max-height: 20px;
+	
+
+		}
+	}
+	.btn{
+		position: absolute;
+	    z-index: 9999999;
+	    top: 10px;
+	    left: 15px;
+	    
+	}
+}
+
+#right { 
+	right: 0; 
+	border-left: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 15px;
+	img{
+		width: 14px;
+		margin: 10px 0 20px 0;
+		z-index: 999999;
+		max-width: 20px;
+		max-height: 20px;
+	}
+	
+}	
+
+#top, #bottom {
+	left: 0; 
+	right: 0;
+	height: 35px;
+
+}
+#top { 
+	top: 0; 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+	.logo{
+		width: 100px;
+		z-index: 102;
+		margin: 0 500px -30px 0;
+		position: relative;
+		@media (max-width: $breakpoint-mobile) {
+			margin: 0 0 -30px 0;
+		}
+	}	
+	.bag-icon img{
+		max-width: 20px;
+		max-height: 20px;
+	}
+	p{
+		margin-left: 20px;
+		text-transform: uppercase;
+		font-size: .75rem;
+	}
+	.search{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		img{
+			max-width: 20px;
+			max-height: 20px;
+		}
+		@media (max-width: $breakpoint-mobile) {
+			display: none;
+		}
+	}
+	@media (max-width: $breakpoint-mobile) {
+		height: 45px;
+		justify-content: space-around;
+		border-bottom: 3px solid #000;
+	}
+}
+
+#bottom { 
+	bottom: 0; 
+	display: flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	text-transform: uppercase;
+
+	@media (max-width: $breakpoint-mobile) {
+		height: 100px;
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.no-mobile-visibility {
+		visibility:hidden;
+	}
+	.no-mobile-display{
+		display: none;
+	}	
+}
+
+@media (min-width: $breakpoint-mobile) {
+	.no-desktop {
+		visibility:hidden;
+	}	
+}
+
+

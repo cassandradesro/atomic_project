@@ -8,10 +8,6 @@ $time: 0.4s;
 
 
 .btn {
-    position: absolute;
-    z-index: 9999999;
-    top: 10px;
-    left: 15px;
     width: $width;
     height: $width * 0.5;
     transform: rotate(0deg);
@@ -73,6 +69,7 @@ $time: 0.4s;
             transition-delay: $time, $time;
         }
     }
+
 }
 
 
@@ -90,7 +87,7 @@ $time: 0.4s;
 .menu-list{
     visibility: hidden ;
     transition: $time, $ease-out;
-
+    
     &.is-active{
         transition: $time $ease-out;
         visibility: visible;
@@ -108,7 +105,7 @@ $time: 0.4s;
         align-items: flex-start;
         justify-content: center;
         padding-left: 100px;
-
+    
 
         li{
             width: 100%;
