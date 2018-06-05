@@ -6,14 +6,31 @@
 		<title>Atomic</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.typekit.net/qbn4jnk.css">
-		<link rel="stylesheet" href="dist/css/main.css">
+		<link rel="stylesheet" href="dist/css/mobile-friendly.css">
 	</head>
 
 	<body>
-		<a href="index.html"><img class="logo" src="dist/img/logo.png" alt="atomic logo"></a>
+		<header id="top">
+			<button class="show btn js-btn">
+					<span class="btn__bar"></span>
+					<em class="sr-only">menu</em>
+			</button>
+			
+			<a href="mobile-friendly.html"><img class="logo" src="dist/img/logo.png" alt="atomic logo"></a>
 
+			<div class="search no-mobile-display">
+				<div><img src="dist/img/search.png" alt="search icon"></div>
+				<p>About</p>
+				<p>Contact</p>
+			</div>
+
+			<div class="show bag-icon">
+				<img  src="dist/img/bag.png" alt="bag icon">
+			</div>
+		</header>
 		<div id="left">
 			<button class="btn js-btn">
 				<span class="btn__bar"></span>
@@ -28,6 +45,7 @@
 				<img src="dist/img/shoe.png" alt="shoe icon">
 				
 			</section>
+
 			<div class="menu-list">
 				<li><a href="shop.html">Hat</a></li>
 				<li><a href="shop.html">Chair</a></li>
@@ -54,13 +72,6 @@
 				<button>Add to cart</button>
 			</div>
 		</div>
-		<div id="top">
-
-			<img src="dist/img/search.png" alt="search icon">
-			<p>About</p>
-			<p>Contact</p>
-		</div>
-		<div id="bottom"></div>
 		<div class="content-wrapper">
 
 
@@ -140,6 +151,16 @@
 				</div>
 			</div>
 		</div>
+		<footer id="bottom">
+			<div class="no-desktop mobile-footer">
+
+				<p>Connect</p>
+				<div>
+					<i class="fab fa-facebook-square"></i>
+					<i class="fab fa-twitter-square"></i>
+				</div>
+			</div>
+		</footer>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 		<script src="dist/js/animation.js"></script>
