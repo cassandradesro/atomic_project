@@ -165,9 +165,13 @@ $breakpoint-mobile: 768px;
 
 
 
+@media (max-width: $breakpoint-mobile) {
+	.content-wrapper{
+		padding-bottom: 100px;
 
+	}
 
-
+}
 
 
 

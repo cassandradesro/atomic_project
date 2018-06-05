@@ -1,4 +1,5 @@
-var btn = document.querySelector('.js-btn');
+var btn = document.querySelector('#left .js-btn');
+var btnMobile = document.querySelector('header .js-btn');
 var menu = document.querySelector('.menu-list');
 var slide2 = document.querySelector('.slide2');
 var slide1 = document.querySelector('.slide1');
@@ -21,10 +22,12 @@ var bagIcon = document.querySelector('.bag-icon');
 function init() {
     leftside.addEventListener('click', function () {
         btn.classList.toggle('is-active');
+        btnMobile.classList.toggle('is-active');
         menu.classList.toggle('is-active');
     });
-    btn.addEventListener('click', function () {
+    btnMobile.addEventListener('click', function () {
         btn.classList.toggle('is-active');
+        btnMobile.classList.toggle('is-active');
         menu.classList.toggle('is-active');
     });
     rightside.addEventListener('click', function () {
