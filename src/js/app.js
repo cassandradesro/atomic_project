@@ -44,18 +44,16 @@ function init() {
 
 document.addEventListener('DOMContentLoaded', init);
 
-var arrow = document.querySelectorAll('.arrow'),
-	result;
-	for (var i = 0; i < arrow.length; i++) {
-	result = arrow[i];
-	result.addEventListener('click', function() {
+var arrow = document.querySelectorAll('.arrow');
+for (var i = 0; i < arrow.length; i++) {
+	arrow[i].addEventListener('click', function() {
 		console.log("touched an arrow")
 		slide1.classList.toggle('active');
 		slide2.classList.toggle('active');
-		TweenMax.staggerFrom(".person", 2, {left:-2000, ease:Back.easeOut}, 0.1);
-		TweenMax.staggerFrom(".letters-wrapper", 1.2, {left:-2000, ease:Back.easeOut}, 0.1);
-		TweenMax.staggerFrom(".pattern", .6, {left:-2000, ease:Back.easeOut}, 0.1);
-		TweenMax.staggerFrom(".bg", 1.5, {left:-2000, ease:Back.easeOut}, 0.1);
+		// TweenMax.staggerFrom(".person", 2, {left:-2000, ease:Back.easeOut}, 0.1);
+		// TweenMax.staggerFrom(".letters-wrapper", 1.2, {left:-2000, ease:Back.easeOut}, 0.1);
+		// TweenMax.staggerFrom(".pattern", .6, {left:-2000, ease:Back.easeOut}, 0.1);
+		// TweenMax.staggerFrom(".bg", 1.5, {left:-2000, ease:Back.easeOut}, 0.1);
 	});
 }
 
