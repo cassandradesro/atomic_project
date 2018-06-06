@@ -44,7 +44,9 @@ $time: 0.4s;
         .checkout-swatch{
             width: 100px;
             height: 100px;
-            background-color: red;
+            background-image: url(../img/swatch1.png); 
+            background-repeat:no-repeat;
+            background-size: cover;
             margin-right: 20px;
         }
         .product-title{

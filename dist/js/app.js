@@ -19,6 +19,8 @@ var productImage = document.querySelector('.product-image');
 var selection = document.querySelector('.selection-container');
 var boxes = document.querySelector('.box-wrapper');
 var bagIcon = document.querySelector('.bag-icon');
+var swatch = document.querySelector('.swatch1');
+var swatch2 = document.querySelector('.swatch2');
 
 function init() {
 	leftside.addEventListener('click', function () {
@@ -68,17 +70,20 @@ girl1.addEventListener('click', function () {
 	productPrice.innerHTML = "$48";
 	productImage.src = "dist/img/girl4.png";
 	productDescription.innerHTML = "This classic suit is cut from lustrous, sexy viscose and features a neat button-up collar and knife pleats through the skirt. The fir is the right kind of boxy, loose at the waist, but has a completely different feel when you style the collar unfastneed and wear one of our scarves, as a belt, at the waist. ";
+	swatch.style.backgroundImage = "url(dist/img/swatch1.png)";
+	swatch2.style.backgroundImage = "url(dist/img/swatch_1.png)";
 });
 
 girl2.addEventListener('click', function () {
 	console.log("girl2 clicked");
 	selection.classList.add('active');
 	boxes.classList.remove('active');
-
 	productTitle.innerHTML = "Victorian Frock";
 	productPrice.innerHTML = "$48";
 	productImage.src = "dist/img/girl3.png";
 	productDescription.innerHTML = "This classic suit is cut from lustrous, sexy viscose and features a neat button-up collar and knife pleats through the skirt. The fir is the right kind of boxy, loose at the waist, but has a completely different feel when you style the collar unfastneed and wear one of our scarves, as a belt, at the waist. ";
+	swatch.style.backgroundImage = "url(dist/img/swatch2.png)";
+	swatch2.style.backgroundImage = "url(dist/img/swatch_2.png)";
 });
 
 girl3.addEventListener('click', function () {
@@ -89,6 +94,8 @@ girl3.addEventListener('click', function () {
 	productPrice.innerHTML = "$70";
 	productImage.src = "dist/img/girl2.png";
 	productDescription.innerHTML = "This classic suit is cut from lustrous, sexy viscose and features a neat button-up collar and knife pleats through the skirt. The fir is the right kind of boxy, loose at the waist, but has a completely different feel when you style the collar unfastneed and wear one of our scarves, as a belt, at the waist. ";
+	swatch.style.backgroundImage = "url(dist/img/swatch3.png)";
+	swatch2.style.backgroundImage = "url(dist/img/swatch_3.png)";
 });
 
 girl4.addEventListener('click', function () {
@@ -99,5 +106,7 @@ girl4.addEventListener('click', function () {
 	productPrice.innerHTML = "$84";
 	productImage.src = "dist/img/shop-image4.png";
 	productDescription.innerHTML = "This classic suit is cut from lustrous, sexy viscose and features a neat button-up collar and knife pleats through the skirt. The fir is the right kind of boxy, loose at the waist, but has a completely different feel when you style the collar unfastneed and wear one of our scarves, as a belt, at the waist. ";
+	swatch.style.backgroundImage = "url(dist/img/swatch4.png)";
+	swatch2.style.backgroundImage = "url(dist/img/swatch_4.png)";
 });
 //# sourceMappingURL=app.js.map

@@ -63,6 +63,7 @@ table {
 @media (max-width: 768px) {
 	.slide-container {
 		height: auto;
+		padding-bottom: 100px;
 	}
 }
 
@@ -131,6 +132,13 @@ table {
 	font-weight: 700;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+}
+
+@media (max-width: 768px) {
+	.letters-wrapper ul {
+		font-size: 18vh;
+	}
 }
 
 .letters-wrapper ul li {
@@ -254,6 +262,13 @@ table {
 	z-index: 4;
 }
 
+@media (max-width: 768px) {
+	.slide1 .person {
+		transform: translateX(50%);
+		height: 80%;
+	}
+}
+
 .slide2 .bg-slide2 {
 	background-color: #49efa3;
 }
@@ -270,14 +285,28 @@ table {
 	z-index: 4;
 }
 
+@media (max-width: 768px) {
+	.slide2 .person {
+		transform: translateX(50%);
+	}
+}
+
 .info {
 	position: absolute;
 	bottom: 15%;
 	right: 10%;
-	z-index: 5;
+	z-index: 6;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.info {
+		right: 50%;
+		bottom: 0;
+		transform: translateX(50%);
+	}
 }
 
 .info img {
@@ -300,7 +329,13 @@ table {
 	white-space: nowrap;
 	box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75);
 	text-decoration: none;
-	/* top: 0; */
+}
+
+@media (max-width: 768px) {
+	.info .whitebox {
+		z-index: 999999;
+		width: 100%;
+	}
 }
 
 .info .whitebox p {
@@ -324,12 +359,15 @@ table {
 	left: 0;
 }
 
-@media (max-width: 768px) {
-	.info .whitebox .blackbox {
-		width: 100%;
-		height: 100px;
-		transform: rotate(0deg);
-	}
+.mobile-blackbox {
+	background-color: #000;
+	width: 100%;
+	height: 100px;
+	bottom: 0;
+	right: 50%;
+	transform: translateX(50%);
+	position: absolute;
+	z-index: 5;
 }
 
 @keyframes animate {
@@ -551,6 +589,7 @@ table {
 	background-repeat: no-repeat;
 	background-position: center;
 	border-bottom: 2px solid red;
+	cursor: pointer;
 }
 
 .box-wrapper.active .box-container .text-wrapper {
@@ -650,6 +689,8 @@ table {
 	width: 100px;
 	height: 100px;
 	margin-bottom: 20px;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .selection-container.active .product-details {
@@ -753,7 +794,9 @@ table {
 .checkout.is-active .checkout-swatch {
 	width: 100px;
 	height: 100px;
-	background-color: red;
+	background-image: url(../img/swatch1.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin-right: 20px;
 }
 
@@ -783,6 +826,8 @@ table {
 
 html, body {
 	background-color: #f7f7f7;
+	width: 100%;
+	height: 100%;
 	font-family: "brandon-grotesque",sans-serif;
 }
 
@@ -832,6 +877,7 @@ html, body {
 	z-index: 9999999;
 	top: 10px;
 	left: 15px;
+	cursor: pointer;
 }
 
 #right {
@@ -850,6 +896,7 @@ html, body {
 	z-index: 999999;
 	max-width: 20px;
 	max-height: 20px;
+	cursor: pointer;
 }
 
 #top, #bottom {

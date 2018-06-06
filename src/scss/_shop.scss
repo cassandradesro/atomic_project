@@ -25,6 +25,7 @@ $breakpoint-mobile: 768px;
 				background-repeat: no-repeat;
 				background-position: center;
 				border-bottom: 2px solid red;
+				cursor: pointer;
 			}
 
 			.text-wrapper{
@@ -106,6 +107,8 @@ $breakpoint-mobile: 768px;
 					width: 100px;
 					height: 100px;
 					margin-bottom: 20px;
+					background-repeat: no-repeat;
+					background-size: cover;
 				}
 			}
 		}
