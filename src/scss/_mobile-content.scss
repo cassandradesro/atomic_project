@@ -17,8 +17,7 @@ $breakpoint-mobile: 768px;
 		overflow: hidden;
 		width: 100vw;
 		height: 100vh;
-		transition: 1s;
-		
+		// transition: .5s;		
 		// default (the not active ones)
 		position: absolute;
 		left: 100%;
@@ -85,7 +84,7 @@ $breakpoint-mobile: 768px;
 			list-style: none;
 			color: #e96f63;
 			text-shadow: none;
-			// animation: animate 1s infinite linear;
+			animation: animate 1s infinite linear;
 			&:nth-child(1){
 				animation-delay: .2s;
 			}
@@ -193,24 +192,55 @@ $breakpoint-mobile: 768px;
 
 .slide2{
 	
-		.bg-slide2{
-			background-color: #49efa3;
+	.bg-slide2{
+		background-color: #49efa3;
+	}
+	.pattern{
+		filter:sepia(100%);
+	}
+	.person{
+		position: absolute;
+		right: 50%;
+		bottom: -60px;
+		height: 95%;
+		z-index: 4;
+		@media (max-width: $breakpoint-mobile) {
+			transform: translateX(50%);
 		}
-		.pattern{
-			filter:sepia(100%);
-		}
-		.person{
-			position: absolute;
-			right: 50%;
-			bottom: -60px;
-			height: 95%;
-			z-index: 4;
-			@media (max-width: $breakpoint-mobile) {
-				transform: translateX(50%);
-			}
-		}
+	}
+}
 
-
+.slide3{
+	
+	.bg-slide3{
+		background-color: #7eb1ce;
+	}
+	.pattern{
+		filter:sepia(100%);
+	}
+	.person{
+		position: absolute;
+		z-index: 4;
+	}
+	.girlsitting1{
+		left: 25%;
+		bottom: 5%;
+		width: 33%;
+		@media (max-width: $breakpoint-mobile) {
+			width: 75%;
+			left: 50%;
+			bottom: 20%;
+		}
+	}
+	.girlsitting2{
+		left: 0%;
+		bottom: 15%;
+		width: 35%;
+		@media (max-width: $breakpoint-mobile) {
+			bottom: 30%;
+			width: 75%;
+		}
+	}
 }
 
 
@@ -247,6 +277,14 @@ $breakpoint-mobile: 768px;
 		white-space: nowrap;
 		box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
 		text-decoration: none;
+
+		&:hover{
+			// background-color: #000;
+			// color:#fff;
+
+			// transform: scale(1);
+
+		}
 		@media (max-width: $breakpoint-mobile) {
 			z-index: 999999;
 			width: 100%;
@@ -259,7 +297,7 @@ $breakpoint-mobile: 768px;
 		}
 		.blackbox{
 			background-color: #000;
-			color: #fff;
+			color: #d2fde9;
 			text-transform: uppercase;
 			padding: 10px;
 			font-weight: bold;
@@ -268,6 +306,13 @@ $breakpoint-mobile: 768px;
 			position: absolute;
 			top: 0;
 			left: 0;
+
+			&:hover{
+				color: #000;
+				background-color: #d2fde9;
+				border: 1px solid #ddd;
+				transform: rotate(-10deg);
+			}
 		}
 	}
 }
@@ -328,33 +373,27 @@ $breakpoint-mobile: 768px;
 @keyframes blink{
 	0%{
 		filter:sepia(100%);
-
 	}
 	18%{
 		filter:sepia(100%);
-
 	}
 	20%{
 		filter:sepia(50%);
-
 	}
 	30%{
 		filter:sepia(100%);
-
 	}
 	35%{
 		filter:sepia(0%);
 	}
 	70%{
 		filter:sepia(100%);
-
 	}
 	85%{
 		filter:sepia(50%);
 	}
 	90%{
 		filter:sepia(100%);
-
 	}
 	100%{
 		filter:sepia(100%);

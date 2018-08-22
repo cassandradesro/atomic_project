@@ -1,6 +1,9 @@
 $breakpoint-mobile: 768px;
 
-
+.content-wrapper{
+	width:100%;
+	overflow: hidden;
+}
 
 .box-wrapper{
 	display: none;
@@ -11,13 +14,17 @@ $breakpoint-mobile: 768px;
 		align-items: center;
 		flex-wrap: wrap;
 		position: relative;
+		transition: .5s;
 
 		.box-container{
 			position: relative;
+			// transition: .5s;
 		
 			.box{
-				display: flex;
-				background-color: #ccc;
+				// display: flex;
+				position: relative;
+				overflow: hidden;
+				background-color: transparent;
 				width: 300px;
 				height: 700px;
 				margin: 60px 10px 0 10px;
@@ -26,13 +33,47 @@ $breakpoint-mobile: 768px;
 				background-position: center;
 				border-bottom: 2px solid red;
 				cursor: pointer;
-			}
+				transition: .5s;
 
+				img{
+					// height: 90%;
+					position: absolute;
+					// top: 42px;
+					// left: 55%;
+					height: 100%;
+					top: 0;
+					left: 0;
+
+				}
+
+			}
+			
+			.box1 img{
+				// transform: translateX(-47%);
+			
+			}
+			.box2, .box3, .box4 {
+				display: none;
+			}
+			.box2 img{
+				transform: translateX(-52%);
+			
+			}
+			.box3 img{
+				transform: translateX(-71%);
+			
+			}
+			.box4 img{
+				transform: translateX(-47%);
+				top: 69px;
+			
+			}
 			.text-wrapper{
 				display: flex;
 				flex-direction: row;
 				margin: 20px 10px 0 10px;
 				width: 300px;
+				transition: .5s;
 				
 			}	
 			.text{
@@ -52,7 +93,7 @@ $breakpoint-mobile: 768px;
 }
 
 .box1{
-	background-image: url(../img/shop-image2.png);
+	// background-image: url(../img/shop-image2.png);
 }
 .box2{
 	background-image: url(../img/shop-image1.png);
@@ -65,35 +106,28 @@ $breakpoint-mobile: 768px;
 }
 
 .selection-container{
-	display: none;
+	display: flex;
+    opacity: 0;
+    position: absolute;
+    top: 25%;
+    
+    overflow: hidden;
+
 
 	&.active{
-		display: flex;
+		opacity: 1;
 		flex-direction: row;
 		width:100%;
-		margin: 60px;
+		// margin: 60px;
 		@media (max-width: $breakpoint-mobile) {
 			flex-direction: column;
 		}
 		.col-half{
-			display: flex;
+			// display: flex;
 			width: 50%;
 			@media (max-width: $breakpoint-mobile) {
 				width: 100%;
 			}
-		}
-
-		.product-images{
-			flex-direction: row;
-			padding-left: 10%;
-			@media (max-width: $breakpoint-mobile) {
-				flex-direction: column;
-			}
-			.product-image{
-				max-width: 50%;
-				margin-right: 40px;
-			}
-
 			.swatches{
 				display: flex;
 				flex-direction: column;
@@ -113,12 +147,26 @@ $breakpoint-mobile: 768px;
 			}
 		}
 
+		// .product-images{
+		// 	flex-direction: row;
+		// 	padding-left: 10%;
+		// 	@media (max-width: $breakpoint-mobile) {
+		// 		flex-direction: column;
+		// 	}
+		// 	.product-image{
+		// 		max-width: 50%;
+		// 		margin-right: 40px;
+		// 	}
+
+			
+		// }
+
 		.product-details{
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			justify-content: center;
-			padding-right: 25%;
 
+				
 			.title-wrapper{
 				display: flex;
 				flex-direction: row;
